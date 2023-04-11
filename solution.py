@@ -6,8 +6,8 @@ chat_id = 761791964 # Ваш chat ID, не меняйте название пе�
 
 def solution(x: np.array, y: np.array) -> bool: # Одна или две выборке на входе, заполняется исходя из условия
     alpha = 0.01
-    effect = permutation_test((x, y), lambda x, y, axis: np.mean(x, axis=axis) - np.mean(y, axis=axis), 
+    znach = permutation_test((x, y), lambda x, y, axis: np.mean(x, axis=axis) - np.mean(y, axis=axis), 
                  vectorized=True, 
                  n_resamples=5000,
                  alternative='greater').pvalue < alpha
-    return effect # Ваш ответ, True или False
+    return znach # Ваш ответ, True или False
